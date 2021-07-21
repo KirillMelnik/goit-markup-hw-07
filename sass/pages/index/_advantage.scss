@@ -1,0 +1,39 @@
+.advantage-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+  margin-left: -30px;
+
+  &__item {
+    flex-basis: calc((100% - 4 * var(--margin-cards)) / 4);
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+}
+
+.advantage {
+  padding: 94px 0;
+}
+
+.advantage__subject {
+  font-weight: bold;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--black-color);
+  margin-bottom: 10px;
+}
+
+.advantage__desc {
+  line-height: 1.71;
+  color: var(--secondary-color);
+}
+
+.advantage__icon-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: var(--background-team);
+  border-radius: 4px;
+  height: 120px;
+}

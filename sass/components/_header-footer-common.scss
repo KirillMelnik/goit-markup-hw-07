@@ -1,0 +1,12 @@
+.header-container,
+.site-nav,
+.menu-list,
+.contacts-list {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo,
+.adress-link {
+  display: inline-block;
+}
