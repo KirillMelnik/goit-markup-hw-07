@@ -1,9 +1,6 @@
 // События формы
 const modalForm = document.querySelector('.modal-form');
 
-// const buttonElem = document.querySelector('.modal-button');
-// const checkboxElem = document.querySelector('.checkbox-input');
-
 const elements = {
   checkboxElem: document.querySelector('.checkbox-input'),
   buttonElem: document.querySelector('.modal-button'),
@@ -12,14 +9,27 @@ const elements = {
 elements.checkboxElem.addEventListener('change', onLicenseChange);
 
 function onLicenseChange(event) {
-  console.log(event.currentTarget.checked);
-  console.log(elements.buttonElem.disabled);
-  elements.buttonElem.disabled = !elements.buttonElem.disabled;
-  if (elements.buttonElem.disabled) {
-    elements.buttonElem.style.backgroundColor = 'grey';
-  } else {
-    elements.buttonElem.style.backgroundColor = 'rgba(33, 150, 243, 1)';
+  const box = event.currentTarget;
+  elements.buttonElem.disabled = !box.checked;
+  if (!elements.buttonElem.disabled) {
+    elements.buttonElem.classList.add('modal-button-second');
   }
+  if (!box.checked) {
+    elements.buttonElem.classList.remove('modal-button-second');
+  }
+}
+
+elements.buttonElem.addEventListener('mouseenter', onMouseEnter);
+elements.buttonElem.addEventListener('mouseleave', onMouseLeave);
+
+function onMouseEnter(event) {
+  const box = event.currentTarget;
+  box.classList.add('modal-button-hover');
+}
+
+function onMouseLeave(event) {
+  const box = event.currentTarget;
+  box.classList.remove('modal-button-hover');
 }
 
 modalForm.addEventListener('submit', onFormSubmit);
@@ -27,7 +37,8 @@ function onFormSubmit(event) {
   event.preventDefault();
   const formData = new FormData(event.currentTarget);
   formData.forEach((name, value) => {
-    console.log(`onFormSubmit -> name: ${name}`);
     console.log(`onFormSubmit -> value: ${value}`);
+    console.log(`onFormSubmit -> name: ${name}`);
   });
+  event.currentTarget.reset();
 }

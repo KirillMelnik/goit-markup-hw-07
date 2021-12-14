@@ -302,6 +302,19 @@ p {
   line-height: 1.87;
   letter-spacing: 0.06em;
   color: var(--white-color);
+  background-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+}
+
+.modal-button-second {
+  padding: 10px 55px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--white-color);
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -309,8 +322,11 @@ p {
   cursor: pointer;
 }
 
-.modal-button:hover {
+.modal-button-hover {
   background-color: var(--modal-button);
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
 }
 
 .header {
@@ -532,6 +548,10 @@ p {
   line-height: 1.25;
 }
 
+.subscribe-email-input:focus {
+  border-color: var(--accent-color);
+}
+
 .subscribe-email-form {
   display: flex;
 }
@@ -554,7 +574,16 @@ p {
 
 .subscribe-email-button:hover,
 .subscribe-email-button:focus {
-  background-color: var(--modal-button);
+  background-color: var(--white-color);
+  color: var(--accent-color);
+  fill: var(--accent-color);
+}
+
+.subscribe-email-button:hover .subscribe-email-icon,
+.subscribe-email-button:focus .subscribe-email-icon {
+  background-color: var(--white-color);
+  color: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 .subscribe-email-icon {
